@@ -118,7 +118,7 @@ public class Hand
    
    public Card playCard()
    {
-      return myCards[--numCards];
+      return myCards[numCards--];
    }
    
    public String toString()
