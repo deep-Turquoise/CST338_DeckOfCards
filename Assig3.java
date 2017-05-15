@@ -84,7 +84,7 @@ public class Card
    }
 }
 
-public class Deck
+public class Hand
 {
    public static int MAX_CARDS = 50;
    private Card[] myCards;
@@ -137,10 +137,15 @@ public class Deck
    {
       return numCards;
    }
+   
+   public Card inspectCard(int k)
+   {
+      //I am confused about this one - Christopher
+   }
 }
 
-public class Hands
+public class Deck
 {
-
+   
 }
 
