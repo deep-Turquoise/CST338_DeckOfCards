@@ -10,12 +10,13 @@ public class Assig3
 {
    public static void main(String[] args)
    {
-      // class Card test
+      System.out.println("----------------------------------------------------");
+      System.out.println("Testing for Class Card...");
+      
       Card legalCard1 = new Card('2', Card.Suit.diamonds);
       Card legalCard2 = new Card('5', Card.Suit.hearts);
       Card illegalCard1 = new Card('Z', Card.Suit.hearts);
-      System.out.println("----------------------------------------------------");
-      System.out.println("Testing for Class Card...");
+      
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
@@ -29,7 +30,20 @@ public class Assig3
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
+      
       System.out.println("----------------------------------------------------");
+      System.out.println("Testing for Class Deck...");
+      Deck newDeck = new Deck(2);
+      int count = 0;
+      while(true)
+      {
+         System.out.print(count + ". ");
+         ++count;
+         Card dealCard = new Card();
+         dealCard = newDeck.dealCard();
+         if(dealCard == null) { break; }
+         else{ System.out.println(dealCard.toString()); }
+      }
    }
 }
 
@@ -193,43 +207,54 @@ class Hand
 class Deck
 {
    public final int MAX_CARDS = 6 * 52; // allow a maximum of six packs (6×52 cards)
-   private static Card[] masterPack = new Card[52];
+   private static Card[] masterPack;
    private Card[] cards = new Card[MAX_CARDS];
    private int topCard;
    private int numPacks;
-
+   
    Deck()
    {
-      int count = 0;
-      for(int i = 0; i < Card.Suit.values().length; ++i)
+      allocateMasterPack();
+      for(int x = 0; x < masterPack.length; ++x)
       {
-         for(int x = 0; x < Card.values.length; ++x)
-         {
-            Card newCard = new Card();
-            newCard.set(Card.values[x], Card.Suit.values()[i]);
-            ++count;
-            cards[count] = newCard;
-         }
+         cards[x] = masterPack[x];
       }
    }
 
    Deck(int numPacks)
    {
+      allocateMasterPack();
       // to ensure we are not going over max
-      if(numPacks > MAX_CARDS)
+      if(numPacks > MAX_CARDS) { numPacks = MAX_CARDS; }
+      
+      int count = numPacks;
+      while(count > 0) 
       {
-         numPacks = MAX_CARDS;
-      }
-
-      for(int x = 0; x < numPacks; ++x)
-      {
-         Deck newDeck = new Deck();
+         for(int x = 0; x < masterPack.length; ++x)
+         {
+               cards[((numPacks-count)*52)+x] = masterPack[x];
+         }
+         --count;
       }
    }
 
    public void init(int numPacks)
    {
-      Deck newDeck = new Deck(numPacks);
+      allocateMasterPack();
+      for(int x = 0; x < cards.length; ++x)
+      {
+         cards[x] = null;
+      }
+
+      int count = numPacks;
+      while(count > 0) 
+      {
+         for(int x = 0; x < masterPack.length; ++x)
+         {
+               cards[((numPacks-count)*52)+x] = masterPack[x];
+         }
+         --count;
+      }
    }
 
    public void shuffle() 
@@ -256,16 +281,50 @@ class Deck
             intReturn = x;
             break;
          }
+         else { continue; }
       }
       return intReturn;
    }
 
    public Card dealCard() 
    {
-      int topCard = topCardAccessor();
-      Card newCard = cards[topCard];
+      topCard = topCardAccessor();
+      Card newCard = new Card();
       newCard.set(cards[topCard].getValue(), cards[topCard].getSuit());
-      cards[topCard] = null;
+      cards[topCard] = null; // remove card
       return newCard;
    }
+<<<<<<< Updated upstream
 }
+=======
+
+   public Card inspectCard(int k)
+   {
+      if(k > topCardAccessor() || cards[k] == null)
+      {
+         Card badCard = new Card();
+         badCard.set('z', Card.Suit.clubs); // this will receive an error flag because of "z"
+         return badCard;
+      }
+      else { return cards[k]; }
+   }
+
+   private static void allocateMasterPack()
+   {
+      if(masterPack== null)
+      {
+         masterPack = new Card[52];
+         int count = 0;
+         for(int i = 0; i < Card.Suit.values().length; ++i)
+         {
+            for(int x = 0; x < Card.values.length; ++x)
+            {
+               masterPack[count] = new Card();
+               masterPack[count].set(Card.values[x], Card.Suit.values()[i]);
+               ++count;
+            }
+         }
+      }
+   }
+}
+>>>>>>> Stashed changes
