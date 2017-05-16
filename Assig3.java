@@ -16,6 +16,15 @@ public class Assig3
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
+      System.out.println();
+      
+      // set card 1 to something illegal and set illegalCard1 to something legal
+      legalCard1.set('C', Card.Suit.diamonds);
+      illegalCard1.set('A', Card.Suit.clubs);
+      
+      System.out.println(legalCard1.toString());
+      System.out.println(legalCard2.toString());
+      System.out.println(illegalCard1.toString());
       System.out.println("----------------------------------------------------");
    }
 }
