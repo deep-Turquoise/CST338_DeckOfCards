@@ -1,5 +1,5 @@
 // Nicholas Nelson, David Henderson, Christopher Calderon
-// Nathan Mauga, Hayley Dimapillis
+// Nathan Mauga, Haley Dimapilis
 // CST338-30_SU17: Software Design
 // Module 3
 // Write a Java program: Decks of Cards (4 hrs)
@@ -175,10 +175,19 @@ class Hand
       return numCards;
    }
 
-   //    public Card inspectCard(int k)
-   //    {
-   //       //I am confused about this one - Christopher
-   //    }
+   // Tests to see if card is legal or not
+   public Card inspectCard(int k)
+   {
+	  if(numCards == 0 || k < 0 || k > numCards)
+	  {
+	     // Creates illegal card
+	     return new Card('X', Card.Suit.spades);
+	  }
+	  else 
+	  {
+	     return myCards[k];
+	  }
+   }
 }
 
 class Deck
