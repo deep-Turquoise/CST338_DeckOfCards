@@ -141,7 +141,10 @@ class Hand
 
    public Card playCard()
    {
-      return myCards[numCards--];
+      Card retCard = myCards[numCards];
+      myCards[numCards] = null;
+      numCards--;
+      return retCard;
    }
 
    public String toString()
