@@ -19,13 +19,13 @@ public class Assig3
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
-      
+
       System.out.println(); // spacer
-      
+
       // set card 1 to something illegal and set illegalCard1 to something legal
       legalCard1.set('C', Card.Suit.diamonds);
       illegalCard1.set('A', Card.Suit.clubs);
-      
+
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
@@ -47,7 +47,7 @@ class Card
       suit = Suit.spades;
       errorFlag = false;
    }
-   
+
    /* Card constructor for creating a deep copy.
     * All of the internal types for this class are scalers and do not require
     * any deep copy mechanisms.
@@ -188,7 +188,7 @@ class Deck
    private Card[] cards = new Card[MAX_CARDS];
    private int topCard;
    private int numPacks;
-   
+
    Deck()
    {
       int count = 0;
@@ -203,7 +203,7 @@ class Deck
          }
       }
    }
-   
+
    Deck(int numPacks)
    {
       // to ensure we are not going over max
@@ -211,18 +211,18 @@ class Deck
       {
          numPacks = MAX_CARDS;
       }
-      
+
       for(int x = 0; x < numPacks; ++x)
       {
          Deck newDeck = new Deck();
       }
    }
-   
+
    public void init(int numPacks)
    {
       Deck newDeck = new Deck(numPacks);
    }
-   
+
    public void shuffle() 
    {
       int index;
@@ -230,17 +230,33 @@ class Deck
       Random random = new Random();
       for (int i = cards.length - 1; i > 0; i--)
       {
-          index = random.nextInt(i + 1);
-          temp = cards[index];
-          cards[index] = cards[i];
-          cards[i] = temp;
+         index = random.nextInt(i + 1);
+         temp = cards[index];
+         cards[index] = cards[i];
+         cards[i] = temp;
       }
    }
-   
+
+   public int topCardAccessor()
+   {
+      int intReturn = cards.length-1;
+      for(int x = cards.length-1; x > 0; --x)
+      {
+         if(cards[x] != null)
+         {
+            intReturn = x;
+            break;
+         }
+      }
+      return intReturn;
+   }
+
    public Card dealCard() 
    {
-      return cards[cards.length];
+      int topCard = topCardAccessor();
+      Card newCard = cards[topCard];
+      newCard.set(cards[topCard].getValue(), cards[topCard].getSuit());
+      cards[topCard] = null;
+      return newCard;
    }
-   
-   
 }
