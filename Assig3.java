@@ -4,6 +4,8 @@
 // Module 3
 // Write a Java program: Decks of Cards (4 hrs)
 
+import java.util.Random;
+
 public class Assig3
 {
    public static void main(String[] args)
@@ -167,6 +169,48 @@ class Hand
 
 class Deck
 {
-
+   public final int MAX_CARDS = 6 * 52; // allow a maximum of six packs (6×52 cards)
+   private static Card[] masterPack = new Card[52];
+   private Card[] cards = new Card[MAX_CARDS];
+   private int topCard;
+   private int numPacks;
+   
+   Deck()
+   {
+      int count = 0;
+      for(int i = 0; i < Card.Suit.values().length; ++i)
+      {
+         for(int x = 0; x < Card.values.length; ++x)
+         {
+            Card newCard = new Card();
+            newCard.set(Card.values[x], Card.Suit.values()[i]);
+            ++count;
+            cards[count] = newCard;
+         }
+      }
+   }
+   
+   Deck(int numPacks)
+   {
+      // to ensure we are not going over max
+      if(numPacks > MAX_CARDS)
+      {
+         numPacks = MAX_CARDS;
+      }
+      
+      for(int x = 0; x < numPacks; ++x)
+      {
+         Deck newDeck = new Deck();
+      }
+   }
+   
+   public void init(int numPacks)
+   {
+      Deck newDeck = new Deck(numPacks);
+   }
+   
+   public void shuffle() 
+   {
+      Random rand = new Random();
+   }
 }
-
