@@ -47,6 +47,17 @@ class Card
       suit = Suit.spades;
       errorFlag = false;
    }
+   
+   /* Card constructor for creating a deep copy.
+    * All of the internal types for this class are scalers and do not require
+    * any deep copy mechanisms.
+    */
+   Card(Card copyCard)
+   {
+      value = copyCard.getValue();
+      suit = copyCard.getSuit();
+      errorFlag = copyCard.getErrorFlag();
+   }
 
    Card(char value, Suit suit)
    {
