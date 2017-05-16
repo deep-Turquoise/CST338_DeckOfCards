@@ -13,10 +13,12 @@ public class Assig3
       Card legalCard2 = new Card('5', Card.Suit.hearts);
       Card illegalCard1 = new Card('Z', Card.Suit.hearts);
       System.out.println("----------------------------------------------------");
+      System.out.println("Testing for Class Card...");
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
-      System.out.println();
+      
+      System.out.println(); // spacer
       
       // set card 1 to something illegal and set illegalCard1 to something legal
       legalCard1.set('C', Card.Suit.diamonds);
