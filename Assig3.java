@@ -211,6 +211,22 @@ class Deck
    
    public void shuffle() 
    {
-      Random rand = new Random();
+      int index;
+      Card temp = new Card();
+      Random random = new Random();
+      for (int i = cards.length - 1; i > 0; i--)
+      {
+          index = random.nextInt(i + 1);
+          temp = cards[index];
+          cards[index] = cards[i];
+          cards[i] = temp;
+      }
    }
+   
+   public Card dealCard() 
+   {
+      return cards[cards.length];
+   }
+   
+   
 }
