@@ -64,7 +64,7 @@ public class Assig3
       }
 
       // output
-      System.out.println("First Deal");
+      System.out.println("First Deal (Unshuffled)");
       for (int y = 0; y < players.length; ++y)
       {
          System.out.println(players[y].toString());
@@ -85,7 +85,7 @@ public class Assig3
       }
 
       // output again
-      System.out.println("Second Deal");
+      System.out.println("Second Deal (Shuffled)");
       for (int y = 0; y < players.length; ++y)
       {
          System.out.println(players[y].toString());
