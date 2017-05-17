@@ -12,14 +12,14 @@ public class Assig3
    private static int getUserInput()
    {
       Scanner scan = new Scanner(System.in);
-      System.out.print("Please enter the number of players: ");
-      int numberPlayers = scan.nextInt();
-
-      if(numberPlayers <= 10 || numberPlayers > 0)
+      
+      int numberPlayers = 0;
+      while (numberPlayers > 10 || numberPlayers <= 0)
       {
-         return numberPlayers;
+         System.out.print("Please enter the number of players (1-10): ");
+         numberPlayers = scan.nextInt();
       }
-      else { return getUserInput(); }
+      return numberPlayers;
    }
 
    public static void main(String[] args)
