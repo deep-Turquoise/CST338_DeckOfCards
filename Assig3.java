@@ -9,95 +9,130 @@ import java.util.Scanner;
 
 public class Assig3
 {
-   public static void main(String[] args)
+   private static int getUserInput()
    {
-      // Phase 4: The Deck and Hand Classes
       Scanner scan = new Scanner(System.in);
-      
       System.out.print("Please enter the number of players: ");
       int numberPlayers = scan.nextInt();
-      
+
+      if(numberPlayers <= 10 || numberPlayers > 0)
+      {
+         return numberPlayers;
+      }
+      else { return getUserInput(); }
+   }
+
+   public static void main(String[] args)
+   {
+      int numberPlayers = getUserInput();
+
       //instantiate a single-pack Deck object without shuffling
       Deck newDeck = new Deck();
+
+      Hand[] players = new Hand[numberPlayers];
+
+      while(true)
+      {
+         if(newDeck.topCardAccessor() == 0) { break; }
+         for(int x = 0; x < players.length; ++x)
+         {
+            Card dealCard = new Card();
+            dealCard = newDeck.dealCard();
+            System.out.println(dealCard.toString());
+            if(dealCard == null) { break; }
+            else{ players[x].takeCard(dealCard); }
+         }
+      }
       
-   }
-//   public static void main(String[] args)
-//   {
-//      System.out.println("----------------------------------------------------");
-//      System.out.println("Testing for Class Card...");
-//
-//      Card legalCard1 = new Card('2', Card.Suit.diamonds);
-//      Card legalCard2 = new Card('5', Card.Suit.hearts);
-//      Card illegalCard1 = new Card('Z', Card.Suit.hearts);
-//
-//      System.out.println(legalCard1.toString());
-//      System.out.println(legalCard2.toString());
-//      System.out.println(illegalCard1.toString());
-//
-//      System.out.println(); // spacer
-//
-//      // set card 1 to something illegal and set illegalCard1 to something legal
-//      legalCard1.set('C', Card.Suit.diamonds);
-//      illegalCard1.set('A', Card.Suit.clubs);
-//
-//      System.out.println(legalCard1.toString());
-//      System.out.println(legalCard2.toString());
-//      System.out.println(illegalCard1.toString());
-//
-//      System.out.println("----------------------------------------------------");
-//      System.out.println("Testing for Class Deck...");
-//      Deck newDeck = new Deck(2);
-//      while(true)
-//      {
-//         Card dealCard = new Card();
-//         dealCard = newDeck.dealCard();
-//         if(dealCard == null) { break; }
-//         else{ System.out.print(dealCard.toString() + " / "); }
-//      }
-//
-//      System.out.println();
-//      System.out.println();
-//      System.out.println(" ~~~ Shuffling ~~~ ");
-//      System.out.println();
-//
-//      newDeck.init(2);
-//      newDeck.shuffle();
-//      while(true)
-//      {
-//         Card dealCard = new Card();
-//         dealCard = newDeck.dealCard();
-//         if(dealCard == null) { break; }
-//         else{ System.out.print(dealCard.toString() + " / "); }
-//      }
-//
-//      System.out.println();
-//      System.out.println();
-//      System.out.println(" ~~~ Single Pack Deal ~~~ ");
-//      System.out.println();
-//      Deck singleDeck = new Deck();
-//      while(true)
-//      {
-//         Card dealCard = new Card();
-//         dealCard = singleDeck.dealCard();
-//         if(dealCard == null) { break; }
-//         else{ System.out.print(dealCard.toString() + " / "); }
-//      }
-//
-//      System.out.println();
-//      System.out.println();
-//      System.out.println(" ~~~ Shuffling ~~~ ");
-//      System.out.println();
-//
-//      singleDeck.init(1);
-//      singleDeck.shuffle();
-//      while(true)
-//      {
-//         Card dealCard = new Card();
-//         dealCard = singleDeck.dealCard();
-//         if(dealCard == null) { break; }
-//         else{ System.out.print(dealCard.toString() + " / "); }
-//      }
-//   }
+      // output
+      for(int z = 0; z < players.length; ++z)
+      {
+         System.out.print("Hand " + z + ": {");
+         for(int y = 0; y < players[z].getNumCards(); ++y)
+         {
+            System.out.print(players[z].toString());
+         }
+         System.out.println(" } ");
+      }
+
+    }
+   //   public static void main(String[] args)
+   //   {
+   //      System.out.println("----------------------------------------------------");
+   //      System.out.println("Testing for Class Card...");
+   //
+   //      Card legalCard1 = new Card('2', Card.Suit.diamonds);
+   //      Card legalCard2 = new Card('5', Card.Suit.hearts);
+   //      Card illegalCard1 = new Card('Z', Card.Suit.hearts);
+   //
+   //      System.out.println(legalCard1.toString());
+   //      System.out.println(legalCard2.toString());
+   //      System.out.println(illegalCard1.toString());
+   //
+   //      System.out.println(); // spacer
+   //
+   //      // set card 1 to something illegal and set illegalCard1 to something legal
+   //      legalCard1.set('C', Card.Suit.diamonds);
+   //      illegalCard1.set('A', Card.Suit.clubs);
+   //
+   //      System.out.println(legalCard1.toString());
+   //      System.out.println(legalCard2.toString());
+   //      System.out.println(illegalCard1.toString());
+   //
+   //      System.out.println("----------------------------------------------------");
+   //      System.out.println("Testing for Class Deck...");
+   //      Deck newDeck = new Deck(2);
+   //      while(true)
+   //      {
+   //         Card dealCard = new Card();
+   //         dealCard = newDeck.dealCard();
+   //         if(dealCard == null) { break; }
+   //         else{ System.out.print(dealCard.toString() + " / "); }
+   //      }
+   //
+   //      System.out.println();
+   //      System.out.println();
+   //      System.out.println(" ~~~ Shuffling ~~~ ");
+   //      System.out.println();
+   //
+   //      newDeck.init(2);
+   //      newDeck.shuffle();
+   //      while(true)
+   //      {
+   //         Card dealCard = new Card();
+   //         dealCard = newDeck.dealCard();
+   //         if(dealCard == null) { break; }
+   //         else{ System.out.print(dealCard.toString() + " / "); }
+   //      }
+   //
+   //      System.out.println();
+   //      System.out.println();
+   //      System.out.println(" ~~~ Single Pack Deal ~~~ ");
+   //      System.out.println();
+   //      Deck singleDeck = new Deck();
+   //      while(true)
+   //      {
+   //         Card dealCard = new Card();
+   //         dealCard = singleDeck.dealCard();
+   //         if(dealCard == null) { break; }
+   //         else{ System.out.print(dealCard.toString() + " / "); }
+   //      }
+   //
+   //      System.out.println();
+   //      System.out.println();
+   //      System.out.println(" ~~~ Shuffling ~~~ ");
+   //      System.out.println();
+   //
+   //      singleDeck.init(1);
+   //      singleDeck.shuffle();
+   //      while(true)
+   //      {
+   //         Card dealCard = new Card();
+   //         dealCard = singleDeck.dealCard();
+   //         if(dealCard == null) { break; }
+   //         else{ System.out.print(dealCard.toString() + " / "); }
+   //      }
+   //   }
 }
 
 /*
