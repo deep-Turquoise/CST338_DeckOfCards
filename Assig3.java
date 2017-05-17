@@ -304,6 +304,10 @@ class Hand
       return false;
    }
 
+   /*
+    * This method plays the top card from the hand.
+    * It removes references to the last Card in the array, and returns that object.
+    */
    public Card playCard()
    {
       Card retCard = myCards[numCards];
@@ -312,6 +316,9 @@ class Hand
       return retCard;
    }
 
+   /*
+    * This method creates and returns a string representation of the Hand class object.
+    */
    public String toString()
    {
       String hand = "Hand:\n";
@@ -324,12 +331,18 @@ class Hand
       return hand;
    }
 
+   // Simple Accessor for the numCard variable.
    public int getNumCards()
    {
       return numCards;
    }
 
-   // Tests to see if card is legal or not
+   /*
+    *  This method returns a card from a specified index in the array.
+    *  It first checks if given index points to a valid location.
+    *  If it does not, it creates a card with the errorFlag set and returns that.
+    */
+   
    public Card inspectCard(int k)
    {
       if(numCards == 0 || k < 0 || k > numCards)
