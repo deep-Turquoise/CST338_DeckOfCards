@@ -463,7 +463,7 @@ class Deck
     */
    public Card inspectCard(int index)
    {
-      if( index >= 0 && index < topCard )
+      if( !( index >= 0 && index < topCard ) )
       {
          Card badCard = new Card();
          badCard.set('z', Card.Suit.clubs); // this will receive an error flag because of "z"
