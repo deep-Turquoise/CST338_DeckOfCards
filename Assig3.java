@@ -32,6 +32,11 @@ public class Assig3
 
       Hand[] players = new Hand[numberPlayers];
 
+      for(int z = 0; z < players.length; ++z)
+      {
+        players[z] = new Hand();
+      }
+
       while (true)
       {
          if (newDeck.topCardAccessor() == 0)
