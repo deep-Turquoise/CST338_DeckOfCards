@@ -181,6 +181,11 @@ class Card
       return false;
    }
 }
+
+/*
+* The Hand class is a simple representation of a user's hand of cards.
+* It Enforces some limit of cards, and has simple methods to add and remove cards from the hand.
+*/
 class Hand
 {
    public static int MAX_CARDS = 50;
