@@ -331,9 +331,6 @@ class Deck
       cards[topCard] = null; // remove card
       return newCard;
    }
-<<<<<<< Updated upstream
-}
-=======
 
    public Card inspectCard(int k)
    {
@@ -364,4 +361,3 @@ class Deck
       }
    }
 }
->>>>>>> Stashed changes
