@@ -470,14 +470,17 @@ class Deck
 
    private static void allocateMasterPack()
    {
+      int index = 0;
+      
       if (masterPack == null)
       {
-         masterPack = new Card[DECK_SIZE];
-         for (int i = 1; i <= Card.Suit.values().length; i++)
+         masterPack = new Card[52];
+         for (int i = 0; i < Card.Suit.values().length; i++)
          {
-            for (int j = 1; j <= Card.values.length; j++)
+            for (int j = 0; j <= Card.values.length; j++)
             {
-               masterPack[(i * j) - 1] = new Card(Card.values[j - 1], Card.Suit.values()[i - 1]);
+               masterPack[index] = new Card(Card.values[j], Card.Suit.values()[i]);
+               index++;
             }
          }
       }
