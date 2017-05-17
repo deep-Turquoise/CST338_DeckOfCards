@@ -366,19 +366,28 @@ class Deck
    private int topCard;
    private int numPacks;
 
+   /*
+    * Default constructor for Deck class.
+    * Returns a new deck with only one set of cards.
+    */
    Deck()
    {
       numPacks = 1;
+      topCard = 0;
       allocateMasterPack();
 
       cards = new Card[numPacks * DECK_SIZE];
       for (int i = 0; i < DECK_SIZE; i++)
       {
-         cards[i] = masterPack[i];
+         cards[i] = new Card(masterPack[i]); // duplicate the card into the array.
       }
       topCard = cards.length - 1;
    }
    
+   /*
+    * Deck constructor that lets you make a shoe with an arbitrary (bit limited) number of decks.
+    * 
+    */
    Deck(int newNumPacks)
    {
       numPacks = newNumPacks;
@@ -422,10 +431,13 @@ class Deck
       }
    }
 
+   /*
+    * This method shuffles the decks.
+    */
    public void shuffle() 
    {
       int index;
-      Card temp = new Card();
+      Card temp;
       Random random = new Random();
       for (int i = cards.length - 1; i > 0; i--)
       {
@@ -436,7 +448,7 @@ class Deck
       }
    }
 
-   
+   // Simple accessor for topCard
    public int topCardAccessor()
    {
       return topCard;
