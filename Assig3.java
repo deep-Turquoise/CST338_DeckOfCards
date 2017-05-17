@@ -229,15 +229,15 @@ class Hand
    // Tests to see if card is legal or not
    public Card inspectCard(int k)
    {
-	  if(numCards == 0 || k < 0 || k > numCards)
-	  {
-	     // Creates illegal card
-	     return new Card('X', Card.Suit.spades);
-	  }
-	  else 
-	  {
-	     return myCards[k];
-	  }
+     if(numCards == 0 || k < 0 || k > numCards)
+     {
+        // Creates illegal card
+        return new Card('X', Card.Suit.spades);
+     }
+     else 
+     {
+        return myCards[k];
+     }
    }
 }
 
@@ -311,7 +311,7 @@ class Deck
    public int topCardAccessor()
    {
       int intReturn = cards.length-1;
-      for(int x = cards.length-1; x > 0; --x)
+      for(int x = cards.length-1; x >= 0; --x)
       {
          if(cards[x] != null)
          {
@@ -326,10 +326,15 @@ class Deck
    public Card dealCard() 
    {
       topCard = topCardAccessor();
+      System.out.print(topCard + " - ");
       Card newCard = new Card();
-      newCard.set(cards[topCard].getValue(), cards[topCard].getSuit());
-      cards[topCard] = null; // remove card
-      return newCard;
+      if(cards[topCard] != null)
+      {
+         newCard.set(cards[topCard].getValue(), cards[topCard].getSuit());
+         cards[topCard] = null; // remove card
+         return newCard;
+      }
+      else { return null; }
    }
 
    public Card inspectCard(int k)
