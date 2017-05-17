@@ -312,33 +312,45 @@ class Deck
 {
    public final int MAX_CARDS = 6 * 52; // allow a maximum of six packs (6 * 52 cards)
    private static Card[] masterPack;
-   private Card[] cards = new Card[MAX_CARDS];
+   private Card[] cards;
    private int topCard;
    private int numPacks;
 
    Deck()
    {
+      numPacks = 1;
       allocateMasterPack();
-      for(int x = 0; x < masterPack.length; ++x)
+
+      cards = new Card[numPacks * 52];
+      for (int i = 0; i < 52; i++)
       {
-         cards[x] = masterPack[x];
+         cards[i] = masterPack[i];
       }
+      topCard = cards.length - 1;
    }
-
-   Deck(int numPacks)
+   
+   Deck(int newNumPacks)
    {
+      numPacks = newNumPacks;
       allocateMasterPack();
-      // to ensure we are not going over max
-      if(numPacks > MAX_CARDS) { numPacks = MAX_CARDS; }
-
-      int count = numPacks;
-      while(count > 0) 
+      
+      if (numPacks * 52 <= MAX_CARDS && numPacks * 52 > 0)
       {
-         for(int x = 0; x < masterPack.length; ++x)
+         cards = new Card[numPacks * 52];
+         
+         for (int i = 0; i < numPacks; i++)
          {
-            cards[((numPacks-count)*52)+x] = masterPack[x];
+            for (int j = 0; j < masterPack.length; j++)
+            {
+               cards[j + (masterPack.length * i)] = masterPack[j];
+            }
          }
-         --count;
+         topCard = cards.length - 1;
+      }
+      
+      else
+      {
+         System.out.println("Error: Invalid number of decks");
       }
    }
 
