@@ -135,12 +135,12 @@ class Card
    }
 
    /*
-    * Another Constructor for the Card class which can be called with a suit and
-    * a value. This constructor checks for errors and returns a card initiated
-    * with "error=True" if either value is bad. The settings for the value and
-    * suit are undefined when a bad values are given, so the errorFlag should be
-    * checked when you make a new card to ensure that a valid object was
-    * returned.
+    * Another Constructor for the Card class which can be called with a suit
+    * and a value. This constructor checks for errors and returns a card
+    * initiated with "error=True" if either value is bad. The settings for
+    * the value and suit are undefined when a bad values are given, so the
+    * errorFlag should be checked when you make a new card to ensure that a
+    *  valid object was returned.
     */
    Card(char value, Suit suit)
    {
@@ -486,3 +486,108 @@ class Deck
       }
    }
 }
+
+/*
+--------------- run #1 ----------------------------------
+Please enter the number of players (1-10): 5
+K of spades Q of spades J of spades T of spades 9 of spades 
+8 of spades 7 of spades 6 of spades 5 of spades 4 of spades 
+3 of spades 2 of spades A of spades K of hearts Q of hearts 
+J of hearts T of hearts 9 of hearts 8 of hearts 7 of hearts 
+6 of hearts 5 of hearts 4 of hearts 3 of hearts 2 of hearts 
+A of hearts K of diamonds Q of diamonds J of diamonds T of diamonds 
+9 of diamonds 8 of diamonds 7 of diamonds 6 of diamonds 5 of diamonds 
+4 of diamonds 3 of diamonds 2 of diamonds A of diamonds K of clubs 
+Q of clubs J of clubs T of clubs 9 of clubs 8 of clubs 
+7 of clubs 6 of clubs 5 of clubs 4 of clubs 3 of clubs 
+2 of clubs A of clubs K of spades Q of spades J of spades 
+T of spades 9 of spades 8 of spades 7 of spades 6 of spades 
+5 of spades 4 of spades 3 of spades 2 of spades A of spades 
+K of hearts Q of hearts J of hearts T of hearts 9 of hearts 
+8 of hearts 7 of hearts 6 of hearts 5 of hearts 4 of hearts 
+3 of hearts 2 of hearts A of hearts K of diamonds Q of diamonds 
+J of diamonds T of diamonds 9 of diamonds 8 of diamonds 7 of diamonds 
+6 of diamonds 5 of diamonds 4 of diamonds 3 of diamonds 2 of diamonds 
+A of diamonds K of clubs Q of clubs J of clubs T of clubs 
+9 of clubs 8 of clubs 7 of clubs 6 of clubs 5 of clubs 
+4 of clubs 3 of clubs 2 of clubs A of clubs 
+
+First Deal (Unshuffled)
+Hand: {K of spades , 8 of spades , 3 of spades , J of hearts , 6 of hearts , A of hearts , 9 of diamonds , 4 of diamonds , Q of clubs , 7 of clubs , 2 of clubs ,  } 
+
+Hand: {Q of spades , 7 of spades , 2 of spades , T of hearts , 5 of hearts , K of diamonds , 8 of diamonds , 3 of diamonds , J of clubs , 6 of clubs , A of clubs ,  } 
+
+Hand: {J of spades , 6 of spades , A of spades , 9 of hearts , 4 of hearts , Q of diamonds , 7 of diamonds , 2 of diamonds , T of clubs , 5 of clubs ,  } 
+
+Hand: {T of spades , 5 of spades , K of hearts , 8 of hearts , 3 of hearts , J of diamonds , 6 of diamonds , A of diamonds , 9 of clubs , 4 of clubs ,  } 
+
+Hand: {9 of spades , 4 of spades , Q of hearts , 7 of hearts , 2 of hearts , T of diamonds , 5 of diamonds , K of clubs , 8 of clubs , 3 of clubs ,  } 
+
+Second Deal (Shuffled)
+Hand: {J of hearts , T of clubs , J of spades , 8 of clubs , Q of clubs , 2 of diamonds , K of spades , J of diamonds , Q of diamonds , J of clubs , A of spades ,  } 
+
+Hand: {5 of clubs , 3 of diamonds , 9 of clubs , 8 of hearts , A of diamonds , 7 of hearts , 6 of clubs , 5 of spades , 4 of hearts , 4 of clubs , 3 of hearts ,  } 
+
+Hand: {K of diamonds , Q of hearts , 2 of spades , 9 of diamonds , 6 of spades , 9 of hearts , 8 of diamonds , 2 of clubs , A of hearts , 2 of hearts ,  } 
+
+Hand: {4 of diamonds , Q of spades , 6 of hearts , 7 of spades , 5 of diamonds , T of hearts , K of clubs , T of diamonds , 4 of spades , A of clubs ,  } 
+
+Hand: {3 of spades , 9 of spades , K of hearts , T of spades , 6 of diamonds , 8 of spades , 3 of clubs , 7 of diamonds , 5 of hearts , 7 of clubs ,  } 
+
+--------------End 1--------------------------------------*/
+/*
+--------------- run #2 ----------------------------------
+Please enter the number of players (1-10): 7
+K of spades Q of spades J of spades T of spades 9 of spades 
+8 of spades 7 of spades 6 of spades 5 of spades 4 of spades 
+3 of spades 2 of spades A of spades K of hearts Q of hearts 
+J of hearts T of hearts 9 of hearts 8 of hearts 7 of hearts 
+6 of hearts 5 of hearts 4 of hearts 3 of hearts 2 of hearts 
+A of hearts K of diamonds Q of diamonds J of diamonds T of diamonds 
+9 of diamonds 8 of diamonds 7 of diamonds 6 of diamonds 5 of diamonds 
+4 of diamonds 3 of diamonds 2 of diamonds A of diamonds K of clubs 
+Q of clubs J of clubs T of clubs 9 of clubs 8 of clubs 
+7 of clubs 6 of clubs 5 of clubs 4 of clubs 3 of clubs 
+2 of clubs A of clubs K of spades Q of spades J of spades 
+T of spades 9 of spades 8 of spades 7 of spades 6 of spades 
+5 of spades 4 of spades 3 of spades 2 of spades A of spades 
+K of hearts Q of hearts J of hearts T of hearts 9 of hearts 
+8 of hearts 7 of hearts 6 of hearts 5 of hearts 4 of hearts 
+3 of hearts 2 of hearts A of hearts K of diamonds Q of diamonds 
+J of diamonds T of diamonds 9 of diamonds 8 of diamonds 7 of diamonds 
+6 of diamonds 5 of diamonds 4 of diamonds 3 of diamonds 2 of diamonds 
+A of diamonds K of clubs Q of clubs J of clubs T of clubs 
+9 of clubs 8 of clubs 7 of clubs 6 of clubs 5 of clubs 
+4 of clubs 3 of clubs 2 of clubs A of clubs 
+
+First Deal (Unshuffled)
+Hand: {K of spades , 6 of spades , Q of hearts , 5 of hearts , J of diamonds , 4 of diamonds , T of clubs , 3 of clubs ,  } 
+
+Hand: {Q of spades , 5 of spades , J of hearts , 4 of hearts , T of diamonds , 3 of diamonds , 9 of clubs , 2 of clubs ,  } 
+
+Hand: {J of spades , 4 of spades , T of hearts , 3 of hearts , 9 of diamonds , 2 of diamonds , 8 of clubs , A of clubs ,  } 
+
+Hand: {T of spades , 3 of spades , 9 of hearts , 2 of hearts , 8 of diamonds , A of diamonds , 7 of clubs ,  } 
+
+Hand: {9 of spades , 2 of spades , 8 of hearts , A of hearts , 7 of diamonds , K of clubs , 6 of clubs ,  } 
+
+Hand: {8 of spades , A of spades , 7 of hearts , K of diamonds , 6 of diamonds , Q of clubs , 5 of clubs ,  } 
+
+Hand: {7 of spades , K of hearts , 6 of hearts , Q of diamonds , 5 of diamonds , J of clubs , 4 of clubs ,  } 
+
+Second Deal (Shuffled)
+Hand: {4 of spades , 7 of spades , 3 of clubs , J of clubs , 8 of spades , Q of diamonds , 6 of clubs , K of clubs ,  } 
+
+Hand: {3 of diamonds , 4 of clubs , 8 of clubs , 7 of hearts , 6 of hearts , T of hearts , 5 of diamonds , J of diamonds ,  } 
+
+Hand: {9 of diamonds , A of hearts , T of clubs , T of diamonds , 9 of spades , K of hearts , A of clubs , K of diamonds ,  } 
+
+Hand: {6 of diamonds , 3 of spades , 2 of spades , 2 of hearts , Q of clubs , 5 of spades , 8 of diamonds ,  } 
+
+Hand: {T of spades , A of spades , 8 of hearts , 2 of diamonds , J of spades , 3 of hearts , 7 of clubs ,  } 
+
+Hand: {A of diamonds , 9 of hearts , 6 of spades , 5 of clubs , 4 of diamonds , 9 of clubs , Q of hearts ,  } 
+
+Hand: {J of hearts , 4 of hearts , Q of spades , 2 of clubs , 7 of diamonds , 5 of hearts , K of spades ,  } 
+---------------------------------End 2-------------*/
+
