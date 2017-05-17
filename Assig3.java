@@ -58,7 +58,8 @@ public class Assig3
       }
       
       // deal cards
-      for(int z = 0; z <= deckTwo.topCardAccessor(); z++)
+      int numCards = deckTwo.topCardAccessor() + 1;
+      for(int z = 0; z < numCards; z++)
       {
          players[z % numberPlayers].takeCard(deckTwo.dealCard());
       }
@@ -69,15 +70,17 @@ public class Assig3
       {
          System.out.println(players[y].toString());
          System.out.println();
+         // Empty the hand after display
+         players[y].resetHand();
       }
       
       // re-init the deck
       deckTwo.init(1);
       // and shuffle;
       deckTwo.shuffle();
-      
+
       // redeal cards
-      for(int z = 0; z <= deckTwo.topCardAccessor(); z++)
+      for(int z = 0; z < numCards; z++)
       {
          players[z % numberPlayers].takeCard(deckTwo.dealCard());
       }
