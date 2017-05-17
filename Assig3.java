@@ -429,10 +429,10 @@ class Deck
       }
    }
 
-   private void initHelper()
-   {
-      
-   }
+   /*
+    * This Method re-initializes the deck. If the deck hasn't been used it returns
+    * without touching the deck.
+    */
    public void init(int numPacks)
    {
       if (topCard + 1 == numPacks * DECK_SIZE)
@@ -444,7 +444,7 @@ class Deck
       for (int x = 0; x < cards.length; ++x)
       {
          cards[x] = null;
-         cards[x] = new Card(mastPack[i % DECK_SIZE]);
+         cards[x] = new Card(masterPack[x % DECK_SIZE]);
       }
       topCard = cards.length -1;
    }
