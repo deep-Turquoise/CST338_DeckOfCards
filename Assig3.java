@@ -359,7 +359,6 @@ class Hand
     * checks if given index points to a valid location. If it does not, it
     * creates a card with the errorFlag set and returns that.
     */
-
    public Card inspectCard(int k)
    {
       if (numCards == 0 || k < 0 || k > numCards)
@@ -373,6 +372,10 @@ class Hand
    }
 }
 
+/*
+ * This class represents a deck of cards, or a shoe of cards. It has simple methods for
+ * initialization, shuffling, dealing etc.
+ */
 class Deck
 {
    public final int DECK_SIZE = 52; // the size of a deck in this game
