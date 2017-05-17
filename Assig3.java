@@ -47,7 +47,7 @@ public class Assig3
       System.out.println("\n"); // add two more carriage returns
       
       // instantiate a single-pack Deck object without shuffling
-      Deck deckTwo = new Deck();
+      Deck newDeck = new Deck();
 
       Hand[] players = new Hand[numberPlayers];
 
@@ -58,14 +58,14 @@ public class Assig3
 
       while (true)
       {
-         if (deckTwo.topCardAccessor() < 0)
+         if (newDeck.topCardAccessor() == 0)
          {
             break;
          }
          for (int x = 0; x < players.length; ++x)
          {
             Card dealCard;
-            dealCard = deckTwo.dealCard();
+            dealCard = newDeck.dealCard();
             if (dealCard.getErrorFlag())
             {
                break;
