@@ -41,12 +41,12 @@ public class Assig3
          if(dealCard == null) { break; }
          else{ System.out.print(dealCard.toString() + " / "); }
       }
-      
+
       System.out.println();
       System.out.println();
       System.out.println(" ~~~ Shuffling ~~~ ");
       System.out.println();
-      
+
       newDeck.init(2);
       newDeck.shuffle();
       while(true)
@@ -56,7 +56,7 @@ public class Assig3
          if(dealCard == null) { break; }
          else{ System.out.print(dealCard.toString() + " / "); }
       }
-      
+
       System.out.println();
       System.out.println();
       System.out.println(" ~~~ Single Pack Deal ~~~ ");
@@ -69,12 +69,12 @@ public class Assig3
          if(dealCard == null) { break; }
          else{ System.out.print(dealCard.toString() + " / "); }
       }
-      
+
       System.out.println();
       System.out.println();
       System.out.println(" ~~~ Shuffling ~~~ ");
       System.out.println();
-      
+
       singleDeck.init(1);
       singleDeck.shuffle();
       while(true)
@@ -209,12 +209,20 @@ class Card
       return false;
    }
 }
+/*
+ * The Hand class is a simple representation of a user's hand of cards.
+ * It Enforces some limit of cards, and has simple methods to add and remove cards from the hand.
+ */
 class Hand
 {
    public static int MAX_CARDS = 50;
    private Card[] myCards;
    private int numCards;
 
+   /*
+    * Simple Constructor for Hand class.
+    * It creates an empty array to hold cards, as well as setting the number of held cards to 0
+    */
    Hand()
    {
       numCards = 0;
