@@ -47,7 +47,6 @@ public class Assig3
          {
             Card dealCard;
             dealCard = newDeck.dealCard();
-            System.out.println(dealCard.toString());
             if (dealCard.getErrorFlag())
             {
                break;
@@ -60,14 +59,10 @@ public class Assig3
       }
 
       // output
-      for (int z = 0; z < players.length; ++z)
+      for (int y = 0; y < players.length; ++y)
       {
-         System.out.print("Hand " + z + ": {");
-         for (int y = 0; y < players[z].getNumCards(); ++y)
-         {
-            System.out.print(players[z].toString());
-         }
-         System.out.println(" } ");
+         System.out.println(players[y].toString());
+         System.out.println();
       }
 
    }
@@ -344,13 +339,15 @@ class Hand
     */
    public String toString()
    {
-      String hand = "Hand:\n";
+      String hand = "Hand: {";
 
       for (int i = 0; i < numCards; i++)
       {
-         hand += myCards[i].toString() + "\n";
+         hand += myCards[i].toString() + ", ";
       }
-
+      
+      hand += " } ";
+      
       return hand;
    }
 
