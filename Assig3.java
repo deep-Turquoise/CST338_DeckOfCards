@@ -310,7 +310,7 @@ class Hand
 
 class Deck
 {
-   public final int MAX_CARDS = 6 * 52; // allow a maximum of six packs (6×52 cards)
+   public final int MAX_CARDS = 6 * 52; // allow a maximum of six packs (6 * 52 cards)
    private static Card[] masterPack;
    private Card[] cards = new Card[MAX_CARDS];
    private int topCard;
