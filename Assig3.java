@@ -457,15 +457,22 @@ class Deck
       }
    }
 
-   public Card inspectCard(int k)
+   /*
+    * This function returns the card at a specific index.
+    * It returns a bad card if an out-of-index argument is made.
+    */
+   public Card inspectCard(int index)
    {
-      if(k > topCardAccessor() || cards[k] == null)
+      if( index >= 0 && index < topCard )
       {
          Card badCard = new Card();
          badCard.set('z', Card.Suit.clubs); // this will receive an error flag because of "z"
          return badCard;
       }
-      else { return cards[k]; }
+      else 
+      { 
+         return cards[index]; 
+      }
    }
 
    /*
