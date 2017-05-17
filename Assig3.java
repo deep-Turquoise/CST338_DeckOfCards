@@ -250,8 +250,8 @@ class Hand
       for (int i = 0; i < numCards; i++)
       {
          myCards[i] = null;
-         numCards = 0;
       }
+      numCards = 0;
    }
 
    /*
