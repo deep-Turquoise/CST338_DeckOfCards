@@ -47,6 +47,10 @@ public class Assig3
    }
 }
 
+/*
+ * This class is a simple representation of a card object.
+ * It carries only a suit and a value, as well as an internal error flag.
+ */
 class Card
 {
    public enum Suit {clubs, diamonds, hearts, spades}
@@ -55,6 +59,10 @@ class Card
    private Suit suit;
    private boolean errorFlag;
 
+   /*
+    * The basic constructor for the card class.
+    * It initializes the card to the Ace of Spades
+    */
    Card()
    {
       value = 'A';
@@ -73,43 +81,69 @@ class Card
       errorFlag = copyCard.getErrorFlag();
    }
 
+   /*
+    * Another Constructor for the Card class which can be called with a suit and a value.
+    * This constructor checks for errors and returns a card initiated with "error=True" if either value is bad.
+    * The settings for the value and suit are undefined when a bad values are given, so the errorFlag should be checked
+    * when you make a new card to ensure that a valid object was returned.
+    */
    Card(char value, Suit suit)
    {
-      set(value, suit); 
+      boolean goodCard;
+      goodCard = set(value, suit);
+      if (goodCard)
+      {
+         errorFlag = false;
+      }
+      else
+      {
+         errorFlag = true;
+      }
    }
 
+   // Simple Accessor for value
    public char getValue()
    {
       return value;
    }
 
+   // Simple Accessor for suit
    public Suit getSuit()
    {
       return suit;
    }
 
+   // Simple Accessor for errorFlag
    public boolean getErrorFlag()
    {
       return errorFlag;
    }
 
+   /*
+    * This Method sets the value and suit for the card.
+    * It checks the arguments and returns true when they are correct, false otherwise.
+    * It also sets the errorFlag based on the correctness of the arguments.
+    * Returns: boolean
+    */
    public boolean set(char newValue, Suit newSuit)
    {
-      if (isValid(newValue, newSuit) == true)
+      if (isValid(newValue, newSuit))
       {
          value = newValue;
          suit = newSuit;
          errorFlag = false;
-         return true;
       }
       else
       {
          errorFlag = true;
          suit = newSuit;
-         return false;
-      }     
+      }
+      return !errorFlag;
    }
 
+   /*
+    * This method generates, then returns a string representation of the card.
+    */
    public String toString()
    {
       if (errorFlag == true)
@@ -119,6 +153,10 @@ class Card
       return getValue() + " of " + getSuit();
    }
 
+   /*
+    * This method takes an argument for value and suit and returns true if they are acceptable.
+    * Returns: boolean
+    */
    private boolean isValid(char value, Suit suit)
    {
       for (int i = 0; i < values.length; i++)
@@ -131,7 +169,6 @@ class Card
       return false;
    }
 }
-
 class Hand
 {
    public static int MAX_CARDS = 50;
