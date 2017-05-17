@@ -429,26 +429,24 @@ class Deck
       }
    }
 
+   private void initHelper()
+   {
+      
+   }
    public void init(int numPacks)
    {
       if (topCard + 1 == numPacks * DECK_SIZE)
       {
          return;
-      }
+      } 
+      
+      // if we pass the return then the deck was at least partially used
       for (int x = 0; x < cards.length; ++x)
       {
          cards[x] = null;
+         cards[x] = new Card(mastPack[i % DECK_SIZE]);
       }
-
-      int count = numPacks;
-      while (count > 0)
-      {
-         for (int x = 0; x < masterPack.length; ++x)
-         {
-            cards[((numPacks - count) * DECK_SIZE) + x] = masterPack[x];
-         }
-         --count;
-      }
+      topCard = cards.length -1;
    }
 
    /*
