@@ -229,6 +229,9 @@ class Hand
       myCards = new Card[MAX_CARDS];
    }
 
+   /*
+    * This method clears the hand (removes all cards)
+    */
    public void resetHand()
    {
       for (int i = 0; i < numCards; i++)
@@ -238,6 +241,9 @@ class Hand
       }
    }
 
+   /*
+    * This accepts a card as an argument.  It then duplicates the card and adds it to the hand.
+    */
    public boolean takeCard(Card card)
    {
       if (numCards != MAX_CARDS)
