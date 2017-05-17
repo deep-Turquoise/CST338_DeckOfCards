@@ -27,6 +27,25 @@ public class Assig3
    {
       int numberPlayers = getUserInput();
 
+      // instantiate a two-pack Deck object without shuffling
+      Deck deckOne = new Deck(2);
+      // Grab the first card
+      int returnNum = 0;
+      Card myCard = deckOne.dealCard();
+      // Display all the cards in the deck (unsorted)
+      do
+      {
+         System.out.print(myCard.toString());
+         myCard = deckOne.dealCard();
+         // add in some carriage returns for looks
+         if (++returnNum % 5 == 0)
+         {
+            System.out.println("");
+         }
+      }
+      while(!myCard.getErrorFlag());
+      System.out.println("\n"); // add two more carriage returns
+      
       // instantiate a single-pack Deck object without shuffling
       Deck newDeck = new Deck();
 
