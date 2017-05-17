@@ -359,7 +359,8 @@ class Hand
 
 class Deck
 {
-   public final int MAX_CARDS = 6 * 52; // allow a maximum of six packs (6 * 52 cards)
+   public final int DECK_SIZE = 52; // the size of a deck in this game
+   public final int MAX_CARDS = 6 * DECK_SIZE; // allow a maximum of six packs (6 * 52 cards)
    private static Card[] masterPack;
    private Card[] cards;
    private int topCard;
@@ -370,8 +371,8 @@ class Deck
       numPacks = 1;
       allocateMasterPack();
 
-      cards = new Card[numPacks * 52];
-      for (int i = 0; i < 52; i++)
+      cards = new Card[numPacks * DECK_SIZE];
+      for (int i = 0; i < DECK_SIZE; i++)
       {
          cards[i] = masterPack[i];
       }
@@ -383,9 +384,9 @@ class Deck
       numPacks = newNumPacks;
       allocateMasterPack();
       
-      if (numPacks * 52 <= MAX_CARDS && numPacks * 52 > 0)
+      if (numPacks * DECK_SIZE <= MAX_CARDS && numPacks * DECK_SIZE > 0)
       {
-         cards = new Card[numPacks * 52];
+         cards = new Card[numPacks * DECK_SIZE];
          
          for (int i = 0; i < numPacks; i++)
          {
@@ -415,7 +416,7 @@ class Deck
       {
          for(int x = 0; x < masterPack.length; ++x)
          {
-            cards[((numPacks-count)*52)+x] = masterPack[x];
+            cards[((numPacks - count) * DECK_SIZE) + x] = masterPack[x];
          }
          --count;
       }
@@ -471,7 +472,7 @@ class Deck
    {
       if (masterPack == null)
       {
-         masterPack = new Card[52];
+         masterPack = new Card[DECK_SIZE];
          for (int i = 1; i <= Card.Suit.values().length; i++)
          {
             for (int j = 1; j <= Card.values.length; j++)
