@@ -39,7 +39,7 @@ public class Assig3
 
       while (true)
       {
-         if (newDeck.topCardAccessor() < 0)
+         if (newDeck.topCardAccessor() == 0)
          {
             break;
          }
