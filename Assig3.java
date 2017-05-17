@@ -437,17 +437,7 @@ class Deck
 
    public int topCardAccessor()
    {
-      int intReturn = cards.length-1;
-      for(int x = cards.length-1; x >= 0; --x)
-      {
-         if(cards[x] != null)
-         {
-            intReturn = x;
-            break;
-         }
-         else { continue; }
-      }
-      return intReturn;
+      return topCard;
    }
 
    public Card dealCard() 
