@@ -205,7 +205,7 @@ class Card
       {
          return "[Invalid]";
       }
-      return getValue() + " of " + getSuit();
+      return getValue() + " of " + getSuit() + " ";
    }
 
    /*
