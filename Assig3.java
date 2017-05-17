@@ -68,7 +68,7 @@ public class Assig3
       while(!myCard.getErrorFlag());
       
       //Prove hand is empty
-      System.out.println("/nAfter Playing All Cards");
+      System.out.println("\nAfter Playing All Cards");
       System.out.println("Hand: " + myHand.toString());
       
       
@@ -557,69 +557,70 @@ class Deck
 Please enter the number of players (1-10): 5
 Hand Ful
 After Deal
-Hand: Hand: {3 of hearts , 9 of spades , 5 of diamonds , A of clubs , A of clubs , J of spades , 
-A of clubs , J of spades , 3 of hearts , 3 of hearts , 3 of hearts , 5 of diamonds , 
-J of spades , 5 of diamonds , 5 of diamonds , 9 of spades , A of clubs , J of spades , 
-9 of spades , 3 of hearts , J of spades , 3 of hearts , J of spades , 3 of hearts , 
-3 of hearts , 9 of spades , 9 of spades , J of spades , 9 of spades , 3 of hearts , 
-3 of hearts , A of clubs , A of clubs , 3 of hearts , 5 of diamonds , 5 of diamonds , 
-9 of spades , 9 of spades , A of clubs , 3 of hearts , 5 of diamonds , 9 of spades , 
-A of clubs , 9 of spades , 3 of hearts , J of spades , 5 of diamonds , A of clubs , 
-J of spades , J of spades ,  } 
-Checking Card at 32A of clubs 
+Hand: Hand: {5 of diamonds , 9 of spades , J of spades , 5 of diamonds , A of clubs , 5 of diamonds , 
+5 of diamonds , 9 of spades , J of spades , 5 of diamonds , 9 of spades , A of clubs , 
+9 of spades , 3 of hearts , 5 of diamonds , 9 of spades , A of clubs , 3 of hearts , 
+J of spades , 5 of diamonds , 9 of spades , 9 of spades , 9 of spades , 5 of diamonds , 
+J of spades , 9 of spades , A of clubs , 5 of diamonds , 5 of diamonds , J of spades , 
+A of clubs , A of clubs , J of spades , 9 of spades , 3 of hearts , 3 of hearts , 
+5 of diamonds , J of spades , 5 of diamonds , J of spades , J of spades , 3 of hearts , 
+3 of hearts , J of spades , 3 of hearts , J of spades , A of clubs , 5 of diamonds , 
+3 of hearts , J of spades ,  } 
+Checking Card at 32J of spades 
 Checking Card at 52[Invalid]
 Checking Card at -1[Invalid]
 J of spades 
-J of spades 
-A of clubs 
+3 of hearts 
 5 of diamonds 
-J of spades 
-3 of hearts 
-9 of spades 
 A of clubs 
-9 of spades 
-5 of diamonds 
-3 of hearts 
-A of clubs 
-9 of spades 
-9 of spades 
-5 of diamonds 
-5 of diamonds 
-3 of hearts 
-A of clubs 
-A of clubs 
-3 of hearts 
-3 of hearts 
-9 of spades 
-J of spades 
-9 of spades 
-9 of spades 
-3 of hearts 
-3 of hearts 
 J of spades 
 3 of hearts 
 J of spades 
 3 of hearts 
-9 of spades 
+3 of hearts 
 J of spades 
-A of clubs 
-9 of spades 
-5 of diamonds 
+J of spades 
 5 of diamonds 
 J of spades 
 5 of diamonds 
 3 of hearts 
 3 of hearts 
-3 of hearts 
+9 of spades 
 J of spades 
 A of clubs 
+A of clubs 
 J of spades 
+5 of diamonds 
+5 of diamonds 
 A of clubs 
-A of clubs 
+9 of spades 
+J of spades 
 5 of diamonds 
 9 of spades 
+9 of spades 
+9 of spades 
+5 of diamonds 
+J of spades 
 3 of hearts 
-/nAfter Playing All Cards
+A of clubs 
+9 of spades 
+5 of diamonds 
+3 of hearts 
+9 of spades 
+A of clubs 
+9 of spades 
+5 of diamonds 
+J of spades 
+9 of spades 
+5 of diamonds 
+5 of diamonds 
+A of clubs 
+5 of diamonds 
+J of spades 
+9 of spades 
+5 of diamonds 
+
+After Playing All Cards
 Hand: Hand: { } 
 K of spades Q of spades J of spades T of spades 9 of spades 
 8 of spades 7 of spades 6 of spades 5 of spades 4 of spades 
@@ -660,20 +661,20 @@ Hand: {9 of spades , 4 of spades , Q of hearts , 7 of hearts , 2 of hearts , T o
 5 of diamonds , K of clubs , 8 of clubs , 3 of clubs ,  } 
 
 Second Deal (Shuffled)
-Hand: {4 of clubs , A of clubs , A of diamonds , 6 of spades , Q of clubs , 9 of spades , 
-2 of hearts , J of clubs , 2 of diamonds , 3 of diamonds , Q of hearts ,  } 
+Hand: {5 of spades , 6 of spades , J of diamonds , 6 of clubs , 3 of diamonds , 8 of hearts , 
+T of diamonds , 6 of hearts , 7 of clubs , K of hearts , K of clubs ,  } 
 
-Hand: {8 of spades , 5 of clubs , T of spades , 6 of clubs , 7 of hearts , T of clubs , 
-K of hearts , 8 of hearts , A of hearts , 2 of clubs , 7 of diamonds ,  } 
+Hand: {8 of diamonds , A of spades , Q of clubs , 8 of clubs , 3 of spades , 9 of diamonds , 
+9 of hearts , 5 of hearts , A of hearts , 7 of hearts , 9 of spades ,  } 
 
-Hand: {9 of clubs , 6 of hearts , 7 of spades , A of spades , J of spades , T of hearts , 
-K of spades , 4 of hearts , 5 of spades , 9 of diamonds ,  } 
+Hand: {A of clubs , 2 of spades , 4 of hearts , 4 of clubs , 4 of spades , 5 of diamonds , 
+5 of clubs , 4 of diamonds , 9 of clubs , Q of spades ,  } 
 
-Hand: {3 of spades , T of diamonds , 4 of diamonds , 8 of clubs , 4 of spades , 7 of clubs , 
-K of diamonds , Q of diamonds , 3 of clubs , K of clubs ,  } 
+Hand: {2 of hearts , 7 of spades , K of spades , T of hearts , Q of hearts , T of clubs , 
+3 of clubs , K of diamonds , 6 of diamonds , Q of diamonds ,  } 
 
-Hand: {6 of diamonds , 8 of diamonds , J of hearts , 9 of hearts , 3 of hearts , 5 of diamonds , 
-J of diamonds , 5 of hearts , Q of spades , 2 of spades ,  }
+Hand: {8 of spades , T of spades , 2 of diamonds , A of diamonds , J of clubs , J of spades , 
+2 of clubs , 7 of diamonds , 3 of hearts , J of hearts ,  } 
 
 --------------End 1--------------------------------------*/
 /*
@@ -681,69 +682,70 @@ J of diamonds , 5 of hearts , Q of spades , 2 of spades ,  }
 Please enter the number of players (1-10): 7
 Hand Ful
 After Deal
-Hand: Hand: {3 of hearts , 9 of spades , 9 of spades , A of clubs , J of spades , A of clubs , 
-J of spades , A of clubs , 5 of diamonds , 9 of spades , 3 of hearts , 3 of hearts , 
-J of spades , 3 of hearts , A of clubs , A of clubs , J of spades , 9 of spades , 
-5 of diamonds , 5 of diamonds , 3 of hearts , 9 of spades , 3 of hearts , J of spades , 
-3 of hearts , A of clubs , 3 of hearts , A of clubs , 9 of spades , A of clubs , 
-3 of hearts , A of clubs , A of clubs , J of spades , 9 of spades , A of clubs , 
-J of spades , 5 of diamonds , J of spades , 3 of hearts , 3 of hearts , 5 of diamonds , 
-A of clubs , J of spades , 9 of spades , 3 of hearts , 3 of hearts , 3 of hearts , 
-3 of hearts , A of clubs ,  } 
+Hand: Hand: {5 of diamonds , 5 of diamonds , 9 of spades , 5 of diamonds , A of clubs , J of spades , 
+A of clubs , 3 of hearts , J of spades , 3 of hearts , A of clubs , 9 of spades , 
+5 of diamonds , 3 of hearts , 5 of diamonds , 9 of spades , A of clubs , A of clubs , 
+J of spades , 3 of hearts , 5 of diamonds , J of spades , A of clubs , J of spades , 
+5 of diamonds , A of clubs , 9 of spades , J of spades , 5 of diamonds , J of spades , 
+5 of diamonds , 3 of hearts , A of clubs , J of spades , A of clubs , J of spades , 
+5 of diamonds , 3 of hearts , 9 of spades , J of spades , 3 of hearts , 5 of diamonds , 
+5 of diamonds , 5 of diamonds , 3 of hearts , 3 of hearts , J of spades , J of spades , 
+A of clubs , 3 of hearts ,  } 
 Checking Card at 32A of clubs 
 Checking Card at 52[Invalid]
 Checking Card at -1[Invalid]
+3 of hearts 
 A of clubs 
-3 of hearts 
-3 of hearts 
-3 of hearts 
-3 of hearts 
-9 of spades 
 J of spades 
-A of clubs 
-5 of diamonds 
-3 of hearts 
-3 of hearts 
-J of spades 
-5 of diamonds 
-J of spades 
-A of clubs 
-9 of spades 
-J of spades 
-A of clubs 
-A of clubs 
-3 of hearts 
-A of clubs 
-9 of spades 
-A of clubs 
-3 of hearts 
-A of clubs 
-3 of hearts 
 J of spades 
 3 of hearts 
-9 of spades 
 3 of hearts 
 5 of diamonds 
 5 of diamonds 
+5 of diamonds 
+3 of hearts 
+J of spades 
 9 of spades 
+3 of hearts 
+5 of diamonds 
+J of spades 
+A of clubs 
+J of spades 
+A of clubs 
+3 of hearts 
+5 of diamonds 
+J of spades 
+5 of diamonds 
+J of spades 
+9 of spades 
+A of clubs 
+5 of diamonds 
+J of spades 
+A of clubs 
+J of spades 
+5 of diamonds 
+3 of hearts 
 J of spades 
 A of clubs 
 A of clubs 
-3 of hearts 
-J of spades 
-3 of hearts 
-3 of hearts 
 9 of spades 
 5 of diamonds 
-A of clubs 
-J of spades 
-A of clubs 
-J of spades 
-A of clubs 
-9 of spades 
-9 of spades 
 3 of hearts 
-/nAfter Playing All Cards
+5 of diamonds 
+9 of spades 
+A of clubs 
+3 of hearts 
+J of spades 
+3 of hearts 
+A of clubs 
+J of spades 
+A of clubs 
+5 of diamonds 
+9 of spades 
+5 of diamonds 
+5 of diamonds 
+
+After Playing All Cards
 Hand: Hand: { } 
 K of spades Q of spades J of spades T of spades 9 of spades 
 8 of spades 7 of spades 6 of spades 5 of spades 4 of spades 
@@ -790,25 +792,27 @@ Hand: {7 of spades , K of hearts , 6 of hearts , Q of diamonds , 5 of diamonds ,
 4 of clubs ,  } 
 
 Second Deal (Shuffled)
-Hand: {2 of diamonds , 4 of clubs , 4 of diamonds , Q of spades , 6 of diamonds , A of diamonds , 
-7 of diamonds , A of hearts ,  } 
+Hand: {4 of clubs , 9 of clubs , J of clubs , 6 of diamonds , 3 of diamonds , J of spades , 
+5 of diamonds , 4 of hearts ,  } 
 
-Hand: {3 of diamonds , T of hearts , 9 of hearts , 5 of spades , 2 of clubs , 8 of spades , 
-7 of clubs , 8 of clubs ,  } 
+Hand: {5 of hearts , 3 of spades , 7 of spades , A of clubs , 6 of hearts , A of diamonds , 
+7 of clubs , 9 of spades ,  } 
 
-Hand: {Q of diamonds , K of clubs , Q of hearts , T of diamonds , A of clubs , 3 of spades , 
-T of spades , 6 of clubs ,  } 
+Hand: {8 of clubs , 5 of clubs , 4 of spades , 9 of hearts , T of hearts , 2 of hearts , 
+Q of spades , K of spades ,  } 
 
-Hand: {J of diamonds , K of spades , 8 of hearts , 3 of hearts , 9 of diamonds , 3 of clubs , 
-9 of clubs ,  } 
+Hand: {J of diamonds , Q of hearts , 6 of clubs , K of clubs , 3 of hearts , T of diamonds , 
+5 of spades ,  } 
 
-Hand: {7 of hearts , J of clubs , 6 of spades , K of hearts , J of hearts , 4 of hearts , 
-5 of diamonds ,  } 
+Hand: {8 of hearts , K of diamonds , 6 of spades , A of spades , 7 of hearts , Q of clubs , 
+K of hearts ,  } 
 
-Hand: {K of diamonds , T of clubs , 6 of hearts , J of spades , 5 of clubs , 7 of spades , 
-Q of clubs ,  } 
+Hand: {4 of diamonds , 2 of spades , T of clubs , 3 of clubs , 2 of diamonds , 8 of spades , 
+2 of clubs ,  } 
 
-Hand: {4 of spades , 2 of hearts , A of spades , 5 of hearts , 9 of spades , 8 of diamonds , 
-2 of spades ,  } 
+Hand: {A of hearts , T of spades , Q of diamonds , 7 of diamonds , J of hearts , 9 of diamonds , 
+8 of diamonds ,  } 
+
+
 ---------------------------------End 2-------------*/
 
