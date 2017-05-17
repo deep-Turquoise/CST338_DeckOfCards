@@ -1,3 +1,4 @@
+
 // Nicholas Nelson, David Henderson, Christopher Calderon
 // Nathan Mauga, Haley Dimapilis
 // CST338-30_SU17: Software Design
@@ -12,7 +13,7 @@ public class Assig3
    private static int getUserInput()
    {
       Scanner scan = new Scanner(System.in);
-      
+
       int numberPlayers = 0;
       while (numberPlayers > 10 || numberPlayers <= 0)
       {
@@ -26,130 +27,143 @@ public class Assig3
    {
       int numberPlayers = getUserInput();
 
-      //instantiate a single-pack Deck object without shuffling
+      // instantiate a single-pack Deck object without shuffling
       Deck newDeck = new Deck();
 
       Hand[] players = new Hand[numberPlayers];
 
-      while(true)
+      while (true)
       {
-         if(newDeck.topCardAccessor() == 0) { break; }
-         for(int x = 0; x < players.length; ++x)
+         if (newDeck.topCardAccessor() == 0)
+         {
+            break;
+         }
+         for (int x = 0; x < players.length; ++x)
          {
             Card dealCard = new Card();
             dealCard = newDeck.dealCard();
             System.out.println(dealCard.toString());
-            if(dealCard == null) { break; }
-            else{ players[x].takeCard(dealCard); }
+            if (dealCard == null)
+            {
+               break;
+            } else
+            {
+               players[x].takeCard(dealCard);
+            }
          }
       }
-      
+
       // output
-      for(int z = 0; z < players.length; ++z)
+      for (int z = 0; z < players.length; ++z)
       {
          System.out.print("Hand " + z + ": {");
-         for(int y = 0; y < players[z].getNumCards(); ++y)
+         for (int y = 0; y < players[z].getNumCards(); ++y)
          {
             System.out.print(players[z].toString());
          }
          System.out.println(" } ");
       }
 
-    }
-   //   public static void main(String[] args)
-   //   {
-   //      System.out.println("----------------------------------------------------");
-   //      System.out.println("Testing for Class Card...");
+   }
+   // public static void main(String[] args)
+   // {
+   // System.out.println("----------------------------------------------------");
+   // System.out.println("Testing for Class Card...");
    //
-   //      Card legalCard1 = new Card('2', Card.Suit.diamonds);
-   //      Card legalCard2 = new Card('5', Card.Suit.hearts);
-   //      Card illegalCard1 = new Card('Z', Card.Suit.hearts);
+   // Card legalCard1 = new Card('2', Card.Suit.diamonds);
+   // Card legalCard2 = new Card('5', Card.Suit.hearts);
+   // Card illegalCard1 = new Card('Z', Card.Suit.hearts);
    //
-   //      System.out.println(legalCard1.toString());
-   //      System.out.println(legalCard2.toString());
-   //      System.out.println(illegalCard1.toString());
+   // System.out.println(legalCard1.toString());
+   // System.out.println(legalCard2.toString());
+   // System.out.println(illegalCard1.toString());
    //
-   //      System.out.println(); // spacer
+   // System.out.println(); // spacer
    //
-   //      // set card 1 to something illegal and set illegalCard1 to something legal
-   //      legalCard1.set('C', Card.Suit.diamonds);
-   //      illegalCard1.set('A', Card.Suit.clubs);
+   // // set card 1 to something illegal and set illegalCard1 to something legal
+   // legalCard1.set('C', Card.Suit.diamonds);
+   // illegalCard1.set('A', Card.Suit.clubs);
    //
-   //      System.out.println(legalCard1.toString());
-   //      System.out.println(legalCard2.toString());
-   //      System.out.println(illegalCard1.toString());
+   // System.out.println(legalCard1.toString());
+   // System.out.println(legalCard2.toString());
+   // System.out.println(illegalCard1.toString());
    //
-   //      System.out.println("----------------------------------------------------");
-   //      System.out.println("Testing for Class Deck...");
-   //      Deck newDeck = new Deck(2);
-   //      while(true)
-   //      {
-   //         Card dealCard = new Card();
-   //         dealCard = newDeck.dealCard();
-   //         if(dealCard == null) { break; }
-   //         else{ System.out.print(dealCard.toString() + " / "); }
-   //      }
+   // System.out.println("----------------------------------------------------");
+   // System.out.println("Testing for Class Deck...");
+   // Deck newDeck = new Deck(2);
+   // while(true)
+   // {
+   // Card dealCard = new Card();
+   // dealCard = newDeck.dealCard();
+   // if(dealCard == null) { break; }
+   // else{ System.out.print(dealCard.toString() + " / "); }
+   // }
    //
-   //      System.out.println();
-   //      System.out.println();
-   //      System.out.println(" ~~~ Shuffling ~~~ ");
-   //      System.out.println();
+   // System.out.println();
+   // System.out.println();
+   // System.out.println(" ~~~ Shuffling ~~~ ");
+   // System.out.println();
    //
-   //      newDeck.init(2);
-   //      newDeck.shuffle();
-   //      while(true)
-   //      {
-   //         Card dealCard = new Card();
-   //         dealCard = newDeck.dealCard();
-   //         if(dealCard == null) { break; }
-   //         else{ System.out.print(dealCard.toString() + " / "); }
-   //      }
+   // newDeck.init(2);
+   // newDeck.shuffle();
+   // while(true)
+   // {
+   // Card dealCard = new Card();
+   // dealCard = newDeck.dealCard();
+   // if(dealCard == null) { break; }
+   // else{ System.out.print(dealCard.toString() + " / "); }
+   // }
    //
-   //      System.out.println();
-   //      System.out.println();
-   //      System.out.println(" ~~~ Single Pack Deal ~~~ ");
-   //      System.out.println();
-   //      Deck singleDeck = new Deck();
-   //      while(true)
-   //      {
-   //         Card dealCard = new Card();
-   //         dealCard = singleDeck.dealCard();
-   //         if(dealCard == null) { break; }
-   //         else{ System.out.print(dealCard.toString() + " / "); }
-   //      }
+   // System.out.println();
+   // System.out.println();
+   // System.out.println(" ~~~ Single Pack Deal ~~~ ");
+   // System.out.println();
+   // Deck singleDeck = new Deck();
+   // while(true)
+   // {
+   // Card dealCard = new Card();
+   // dealCard = singleDeck.dealCard();
+   // if(dealCard == null) { break; }
+   // else{ System.out.print(dealCard.toString() + " / "); }
+   // }
    //
-   //      System.out.println();
-   //      System.out.println();
-   //      System.out.println(" ~~~ Shuffling ~~~ ");
-   //      System.out.println();
+   // System.out.println();
+   // System.out.println();
+   // System.out.println(" ~~~ Shuffling ~~~ ");
+   // System.out.println();
    //
-   //      singleDeck.init(1);
-   //      singleDeck.shuffle();
-   //      while(true)
-   //      {
-   //         Card dealCard = new Card();
-   //         dealCard = singleDeck.dealCard();
-   //         if(dealCard == null) { break; }
-   //         else{ System.out.print(dealCard.toString() + " / "); }
-   //      }
-   //   }
+   // singleDeck.init(1);
+   // singleDeck.shuffle();
+   // while(true)
+   // {
+   // Card dealCard = new Card();
+   // dealCard = singleDeck.dealCard();
+   // if(dealCard == null) { break; }
+   // else{ System.out.print(dealCard.toString() + " / "); }
+   // }
+   // }
 }
 
 /*
- * This class is a simple representation of a card object.
- * It carries only a suit and a value, as well as an internal error flag.
+ * This class is a simple representation of a card object. It carries only a
+ * suit and a value, as well as an internal error flag.
  */
 class Card
 {
-   public enum Suit {clubs, diamonds, hearts, spades}
-   public static char[] values = {'A','2','3','4','5','6','7','8','9','T','J','Q','K'};
+   public enum Suit
+   {
+      clubs, diamonds, hearts, spades
+   }
+
+   public static char[] values =
+   { 'A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K' };
    private char value;
    private Suit suit;
    private boolean errorFlag;
 
    /*
-    * The basic constructor for the card class.
-    * It initializes the card to the Ace of Spades
+    * The basic constructor for the card class. It initializes the card to the
+    * Ace of Spades
     */
    Card()
    {
@@ -158,9 +172,9 @@ class Card
       errorFlag = false;
    }
 
-   /* Card constructor for creating a deep copy.
-    * All of the internal types for this class are scalers and do not require
-    * any deep copy mechanisms.
+   /*
+    * Card constructor for creating a deep copy. All of the internal types for
+    * this class are scalers and do not require any deep copy mechanisms.
     */
    Card(Card copyCard)
    {
@@ -170,10 +184,12 @@ class Card
    }
 
    /*
-    * Another Constructor for the Card class which can be called with a suit and a value.
-    * This constructor checks for errors and returns a card initiated with "error=True" if either value is bad.
-    * The settings for the value and suit are undefined when a bad values are given, so the errorFlag should be checked
-    * when you make a new card to ensure that a valid object was returned.
+    * Another Constructor for the Card class which can be called with a suit and
+    * a value. This constructor checks for errors and returns a card initiated
+    * with "error=True" if either value is bad. The settings for the value and
+    * suit are undefined when a bad values are given, so the errorFlag should be
+    * checked when you make a new card to ensure that a valid object was
+    * returned.
     */
    Card(char value, Suit suit)
    {
@@ -182,8 +198,7 @@ class Card
       if (goodCard)
       {
          errorFlag = false;
-      }
-      else
+      } else
       {
          errorFlag = true;
       }
@@ -208,10 +223,9 @@ class Card
    }
 
    /*
-    * This Method sets the value and suit for the card.
-    * It checks the arguments and returns true when they are correct, false otherwise.
-    * It also sets the errorFlag based on the correctness of the arguments.
-    * Returns: boolean
+    * This Method sets the value and suit for the card. It checks the arguments
+    * and returns true when they are correct, false otherwise. It also sets the
+    * errorFlag based on the correctness of the arguments. Returns: boolean
     */
    public boolean set(char newValue, Suit newSuit)
    {
@@ -220,8 +234,7 @@ class Card
          value = newValue;
          suit = newSuit;
          errorFlag = false;
-      }
-      else
+      } else
       {
          errorFlag = true;
          suit = newSuit;
@@ -242,8 +255,8 @@ class Card
    }
 
    /*
-    * This method takes an argument for value and suit and returns true if they are acceptable.
-    * Returns: boolean
+    * This method takes an argument for value and suit and returns true if they
+    * are acceptable. Returns: boolean
     */
    private boolean isValid(char value, Suit suit)
    {
@@ -252,14 +265,16 @@ class Card
          if (value == values[i])
          {
             return true;
-         } 
+         }
       }
       return false;
    }
 }
+
 /*
- * The Hand class is a simple representation of a user's hand of cards.
- * It Enforces some limit of cards, and has simple methods to add and remove cards from the hand.
+ * The Hand class is a simple representation of a user's hand of cards. It
+ * Enforces some limit of cards, and has simple methods to add and remove cards
+ * from the hand.
  */
 class Hand
 {
@@ -268,8 +283,8 @@ class Hand
    private int numCards;
 
    /*
-    * Simple Constructor for Hand class.
-    * It creates an empty array to hold cards, as well as setting the number of held cards to 0
+    * Simple Constructor for Hand class. It creates an empty array to hold
+    * cards, as well as setting the number of held cards to 0
     */
    Hand()
    {
@@ -290,7 +305,8 @@ class Hand
    }
 
    /*
-    * This accepts a card as an argument.  It then duplicates the card and adds it to the hand.
+    * This accepts a card as an argument. It then duplicates the card and adds
+    * it to the hand.
     */
    public boolean takeCard(Card card)
    {
@@ -305,8 +321,8 @@ class Hand
    }
 
    /*
-    * This method plays the top card from the hand.
-    * It removes references to the last Card in the array, and returns that object.
+    * This method plays the top card from the hand. It removes references to the
+    * last Card in the array, and returns that object.
     */
    public Card playCard()
    {
@@ -317,7 +333,8 @@ class Hand
    }
 
    /*
-    * This method creates and returns a string representation of the Hand class object.
+    * This method creates and returns a string representation of the Hand class
+    * object.
     */
    public String toString()
    {
@@ -338,19 +355,18 @@ class Hand
    }
 
    /*
-    *  This method returns a card from a specified index in the array.
-    *  It first checks if given index points to a valid location.
-    *  If it does not, it creates a card with the errorFlag set and returns that.
+    * This method returns a card from a specified index in the array. It first
+    * checks if given index points to a valid location. If it does not, it
+    * creates a card with the errorFlag set and returns that.
     */
-   
+
    public Card inspectCard(int k)
    {
-      if(numCards == 0 || k < 0 || k > numCards)
+      if (numCards == 0 || k < 0 || k > numCards)
       {
          // Creates illegal card
          return new Card('X', Card.Suit.spades);
-      }
-      else 
+      } else
       {
          return myCards[k];
       }
@@ -360,15 +376,16 @@ class Hand
 class Deck
 {
    public final int DECK_SIZE = 52; // the size of a deck in this game
-   public final int MAX_CARDS = 6 * DECK_SIZE; // allow a maximum of six packs (6 * 52 cards)
+   public final int MAX_CARDS = 6 * DECK_SIZE; // allow a maximum of six packs
+                                               // (6 * 52 cards)
    private static Card[] masterPack;
    private Card[] cards;
    private int topCard;
    private int numPacks;
 
    /*
-    * Default constructor for Deck class.
-    * Returns a new deck with only one set of cards.
+    * Default constructor for Deck class. Returns a new deck with only one set
+    * of cards.
     */
    Deck()
    {
@@ -379,34 +396,33 @@ class Deck
       cards = new Card[numPacks * DECK_SIZE];
       for (int i = 0; i < DECK_SIZE; i++)
       {
-         cards[i] = new Card(masterPack[i]); // duplicate the card into the array.
+         cards[i] = new Card(masterPack[i]); // duplicate the card into the
+                                             // array.
       }
       topCard = cards.length - 1;
    }
-   
+
    /*
-    * Deck constructor that lets you make a shoe with an arbitrary (bit limited) number of decks.
-    * 
+    * Deck constructor that lets you make a shoe with an arbitrary (bit limited)
+    * number of decks.
     */
    Deck(int newNumPacks)
    {
-      numPacks = newNumPacks;
+      int numCards = newNumPacks * DECK_SIZE;
       allocateMasterPack();
-      
-      if (numPacks * DECK_SIZE <= MAX_CARDS && numPacks * DECK_SIZE > 0)
+
+      if (numCards <= MAX_CARDS && numCards > 0)
       {
-         cards = new Card[numPacks * DECK_SIZE];
-         
-         for (int i = 0; i < numPacks; i++)
+         numPacks = newNumPacks;
+         cards = new Card[numCards];
+         for (int k = 0; k < numCards; k++)
          {
-            for (int j = 0; j < masterPack.length; j++)
-            {
-               cards[j + (masterPack.length * i)] = masterPack[j];
-            }
+            Card newCard = new Card(masterPack[k % DECK_SIZE]);
+            cards[k] = newCard;
          }
          topCard = cards.length - 1;
       }
-      
+
       else
       {
          System.out.println("Error: Invalid number of decks");
@@ -415,15 +431,19 @@ class Deck
 
    public void init(int numPacks)
    {
-      for(int x = 0; x < cards.length; ++x)
+      if (topCard + 1 == numPacks * DECK_SIZE)
+      {
+         return;
+      }
+      for (int x = 0; x < cards.length; ++x)
       {
          cards[x] = null;
       }
 
       int count = numPacks;
-      while(count > 0) 
+      while (count > 0)
       {
-         for(int x = 0; x < masterPack.length; ++x)
+         for (int x = 0; x < masterPack.length; ++x)
          {
             cards[((numPacks - count) * DECK_SIZE) + x] = masterPack[x];
          }
@@ -434,7 +454,7 @@ class Deck
    /*
     * This method shuffles the decks.
     */
-   public void shuffle() 
+   public void shuffle()
    {
       int index;
       Card temp;
@@ -455,48 +475,50 @@ class Deck
    }
 
    /*
-    * This method takes the top card from the deck and "deals it" thus removing it from the deck.
+    * This method takes the top card from the deck and "deals it" thus removing
+    * it from the deck.
     */
-   public Card dealCard() 
+   public Card dealCard()
    {
       Card retCard;
       if (topCard > 0)
       {
          retCard = cards[topCard];
          topCard--;
-      }
-      else
+      } else
       {
-         retCard = new Card( 'z', Card.Suit.clubs);  // 'z' forces a card with errorFlag set.
+         retCard = new Card('z', Card.Suit.clubs); // 'z' forces a card with
+                                                   // errorFlag set.
       }
       return retCard;
    }
 
    /*
-    * This function returns the card at a specific index.
-    * It returns a bad card if an out-of-index argument is made.
+    * This function returns the card at a specific index. It returns a bad card
+    * if an out-of-index argument is made.
     */
    public Card inspectCard(int index)
    {
-      if( !( index >= 0 && index < topCard ) )
+      if (!(index >= 0 && index < topCard))
       {
          Card badCard = new Card();
-         badCard.set('z', Card.Suit.clubs); // this will receive an error flag because of "z"
+         badCard.set('z', Card.Suit.clubs); // this will receive an error flag
+                                            // because of "z"
          return badCard;
-      }
-      else 
-      { 
-         return cards[index]; 
+      } else
+      {
+         return cards[index];
       }
    }
 
    /*
-    * This Method creates a masterPack of cards for later use if and only if it wasn't created already.
+    * This Method creates a masterPack of cards for later use if and only if it
+    * wasn't created already.
     */
    private static void allocateMasterPack()
    {
       int index = 0;
-      
+
       if (masterPack == null)
       {
          masterPack = new Card[52];
