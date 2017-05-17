@@ -42,24 +42,23 @@ public class Assig3
          {
             System.out.println("");
          }
-      }
-      while(!myCard.getErrorFlag());
+      } while (!myCard.getErrorFlag());
       System.out.println("\n"); // add two more carriage returns
-      
+
       // instantiate a single-pack Deck object without shuffling
       returnNum = 0;
       Deck deckTwo = new Deck();
 
       Hand[] players = new Hand[numberPlayers];
 
-      for(int z = 0; z < players.length; ++z)
+      for (int z = 0; z < players.length; ++z)
       {
-        players[z] = new Hand();
+         players[z] = new Hand();
       }
-      
+
       // deal cards
       int numCards = deckTwo.topCardAccessor() + 1;
-      for(int z = 0; z < numCards; z++)
+      for (int z = 0; z < numCards; z++)
       {
          players[z % numberPlayers].takeCard(deckTwo.dealCard());
       }
@@ -73,14 +72,14 @@ public class Assig3
          // Empty the hand after display
          players[y].resetHand();
       }
-      
+
       // re-init the deck
       deckTwo.init(1);
       // and shuffle;
       deckTwo.shuffle();
 
       // redeal cards
-      for(int z = 0; z < numCards; z++)
+      for (int z = 0; z < numCards; z++)
       {
          players[z % numberPlayers].takeCard(deckTwo.dealCard());
       }
@@ -92,8 +91,6 @@ public class Assig3
          System.out.println(players[y].toString());
          System.out.println();
       }
-      
-      
 
    }
 }
@@ -298,9 +295,9 @@ class Hand
       {
          hand += myCards[i].toString() + ", ";
       }
-      
+
       hand += " } ";
-      
+
       return hand;
    }
 
@@ -329,14 +326,14 @@ class Hand
 }
 
 /*
- * This class represents a deck of cards, or a shoe of cards. It has simple methods for
- * initialization, shuffling, dealing etc.
+ * This class represents a deck of cards, or a shoe of cards. It has simple
+ * methods for initialization, shuffling, dealing etc.
  */
 class Deck
 {
    public final int DECK_SIZE = 52; // the size of a deck in this game
    public final int MAX_CARDS = 6 * DECK_SIZE; // allow a maximum of six packs
-                                               // (6 * 52 cards)
+   // (6 * 52 cards)
    private static Card[] masterPack;
    private Card[] cards;
    private int topCard;
@@ -355,7 +352,7 @@ class Deck
       for (int i = 0; i < DECK_SIZE; i++)
       {
          cards[i] = new Card(masterPack[i]); // duplicate the card into the
-                                             // array.
+         // array.
       }
       topCard = cards.length - 1;
    }
@@ -388,23 +385,23 @@ class Deck
    }
 
    /*
-    * This Method re-initializes the deck. If the deck hasn't been used it returns
-    * without touching the deck.
+    * This Method re-initializes the deck. If the deck hasn't been used it
+    * returns without touching the deck.
     */
    public void init(int numPacks)
    {
       if (topCard + 1 == numPacks * DECK_SIZE)
       {
          return;
-      } 
-      
+      }
+
       // if we pass the return then the deck was at least partially used
       for (int x = 0; x < cards.length; ++x)
       {
          cards[x] = null;
          cards[x] = new Card(masterPack[x % DECK_SIZE]);
       }
-      topCard = cards.length -1;
+      topCard = cards.length - 1;
    }
 
    /*
@@ -444,7 +441,7 @@ class Deck
       } else
       {
          retCard = new Card('z', Card.Suit.clubs); // 'z' forces a card with
-                                                   // errorFlag set.
+         // errorFlag set.
       }
       return retCard;
    }
@@ -459,7 +456,7 @@ class Deck
       {
          Card badCard = new Card();
          badCard.set('z', Card.Suit.clubs); // this will receive an error flag
-                                            // because of "z"
+         // because of "z"
          return badCard;
       } else
       {
