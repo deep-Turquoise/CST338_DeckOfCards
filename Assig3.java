@@ -56,6 +56,34 @@ public class Assig3
          if(dealCard == null) { break; }
          else{ System.out.print(dealCard.toString() + " / "); }
       }
+      
+      System.out.println();
+      System.out.println();
+      System.out.println(" ~~~ Single Pack Deal ~~~ ");
+      System.out.println();
+      Deck singleDeck = new Deck();
+      while(true)
+      {
+         Card dealCard = new Card();
+         dealCard = singleDeck.dealCard();
+         if(dealCard == null) { break; }
+         else{ System.out.print(dealCard.toString() + " / "); }
+      }
+      
+      System.out.println();
+      System.out.println();
+      System.out.println(" ~~~ Shuffling ~~~ ");
+      System.out.println();
+      
+      singleDeck.init(1);
+      singleDeck.shuffle();
+      while(true)
+      {
+         Card dealCard = new Card();
+         dealCard = singleDeck.dealCard();
+         if(dealCard == null) { break; }
+         else{ System.out.print(dealCard.toString() + " / "); }
+      }
    }
 }
 
