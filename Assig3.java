@@ -296,7 +296,8 @@ class Hand
    {
       if (numCards != MAX_CARDS)
       {
-         myCards[numCards] = card;
+         Card newCard = new Card(card);
+         myCards[numCards] = newCard;
          numCards++;
          return true;
       }
