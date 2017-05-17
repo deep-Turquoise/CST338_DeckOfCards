@@ -47,6 +47,7 @@ public class Assig3
       System.out.println("\n"); // add two more carriage returns
       
       // instantiate a single-pack Deck object without shuffling
+      returnNum = 0;
       Deck deckTwo = new Deck();
 
       Hand[] players = new Hand[numberPlayers];
@@ -55,34 +56,41 @@ public class Assig3
       {
         players[z] = new Hand();
       }
-
-      while (true)
+      
+      // deal cards
+      for(int z = 0; z <= deckTwo.topCardAccessor(); z++)
       {
-         if (deckTwo.topCardAccessor() < 0)
-         {
-            break;
-         }
-         for (int x = 0; x < players.length; ++x)
-         {
-            Card dealCard;
-            dealCard = deckTwo.dealCard();
-            if (dealCard.getErrorFlag())
-            {
-               break;
-            } 
-            else
-            {
-               players[x].takeCard(dealCard);
-            }
-         }
+         players[z % numberPlayers].takeCard(deckTwo.dealCard());
       }
 
       // output
+      System.out.println("First Deal");
       for (int y = 0; y < players.length; ++y)
       {
          System.out.println(players[y].toString());
          System.out.println();
       }
+      
+      // re-init the deck
+      deckTwo.init(1);
+      // and shuffle;
+      deckTwo.shuffle();
+      
+      // redeal cards
+      for(int z = 0; z <= deckTwo.topCardAccessor(); z++)
+      {
+         players[z % numberPlayers].takeCard(deckTwo.dealCard());
+      }
+
+      // output again
+      System.out.println("Second Deal");
+      for (int y = 0; y < players.length; ++y)
+      {
+         System.out.println(players[y].toString());
+         System.out.println();
+      }
+      
+      
 
    }
 }
