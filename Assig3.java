@@ -192,6 +192,10 @@ class Hand
    private Card[] myCards;
    private int numCards;
 
+   /*
+    * Simple Constructor for Hand class.
+    * It creates an empty array to hold cards, as well as setting the number of held cards to 0
+    */
    Hand()
    {
       numCards = 0;
