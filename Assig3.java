@@ -442,15 +442,18 @@ class Deck
 
    public Card dealCard() 
    {
-      topCard = topCardAccessor();
       Card newCard = new Card();
-      if(cards[topCard] != null)
+      if(cards[topCardAccessor()] != null)
       {
          newCard.set(cards[topCard].getValue(), cards[topCard].getSuit());
-         cards[topCard] = null; // remove card
+         cards[topCardAccessor()] = null; // remove card
+         topCard--;
          return newCard;
       }
-      else { return null; }
+      else 
+      { 
+         return null; 
+      }
    }
 
    public Card inspectCard(int k)
