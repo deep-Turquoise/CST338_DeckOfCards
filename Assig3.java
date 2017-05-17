@@ -363,4 +363,19 @@ class Deck
          }
       }
    }
+   
+   private static void allocateMasterPackAlt()
+   {
+      if (masterPack == null)
+      {
+         for (int i = 1; i <= Card.Suit.values().length; i++)
+         {
+            for (int j = 1; j <= Card.values.length; j++)
+            {
+               masterPack[(i * j) - 1] = new Card(Card.values[j - 1], Card.Suit.values()[i - 1]);
+            }
+         }
+      }
+      
+   }
 }
