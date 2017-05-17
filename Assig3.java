@@ -39,19 +39,22 @@ public class Assig3
          Card dealCard = new Card();
          dealCard = newDeck.dealCard();
          if(dealCard == null) { break; }
-         else{ System.out.println(dealCard.toString()); }
+         else{ System.out.print(dealCard.toString() + " / "); }
       }
+      
+      System.out.println();
       System.out.println();
       System.out.println(" ~~~ Shuffling ~~~ ");
       System.out.println();
       
       newDeck.init(2);
+      newDeck.shuffle();
       while(true)
       {
          Card dealCard = new Card();
          dealCard = newDeck.dealCard();
          if(dealCard == null) { break; }
-         else{ System.out.println(dealCard.toString()); }
+         else{ System.out.print(dealCard.toString() + " / "); }
       }
    }
 }
@@ -354,19 +357,22 @@ class Deck
       }
       else { return cards[k]; }
    }
-   
-   private static void allocateMasterPackAlt()
+
+   private static void allocateMasterPack()
    {
-      if (masterPack == null)
+      if(masterPack== null)
       {
-         for (int i = 1; i <= Card.Suit.values().length; i++)
+         masterPack = new Card[52];
+         int count = 0;
+         for(int i = 0; i < Card.Suit.values().length; ++i)
          {
-            for (int j = 1; j <= Card.values.length; j++)
+            for(int x = 0; x < Card.values.length; ++x)
             {
-               masterPack[(i * j) - 1] = new Card(Card.values[j - 1], Card.Suit.values()[i - 1]);
+               masterPack[count] = new Card();
+               masterPack[count].set(Card.values[x], Card.Suit.values()[i]);
+               ++count;
             }
          }
       }
-      
    }
 }
