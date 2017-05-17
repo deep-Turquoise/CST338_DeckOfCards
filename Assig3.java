@@ -468,6 +468,9 @@ class Deck
       else { return cards[k]; }
    }
 
+   /*
+    * This Method creates a masterPack of cards for later use if and only if it wasn't created already.
+    */
    private static void allocateMasterPack()
    {
       int index = 0;
