@@ -209,21 +209,12 @@ class Card
       return false;
    }
 }
-
-/*
-* The Hand class is a simple representation of a user's hand of cards.
-* It Enforces some limit of cards, and has simple methods to add and remove cards from the hand.
-*/
 class Hand
 {
    public static int MAX_CARDS = 50;
    private Card[] myCards;
    private int numCards;
 
-   /*
-    * Simple Constructor for Hand class.
-    * It creates an empty array to hold cards, as well as setting the number of held cards to 0
-    */
    Hand()
    {
       numCards = 0;
@@ -397,17 +388,14 @@ class Deck
 
    private static void allocateMasterPack()
    {
-      if(masterPack== null)
+      if (masterPack == null)
       {
          masterPack = new Card[52];
-         int count = 0;
-         for(int i = 0; i < Card.Suit.values().length; ++i)
+         for (int i = 1; i <= Card.Suit.values().length; i++)
          {
-            for(int x = 0; x < Card.values.length; ++x)
+            for (int j = 1; j <= Card.values.length; j++)
             {
-               masterPack[count] = new Card();
-               masterPack[count].set(Card.values[x], Card.Suit.values()[i]);
-               ++count;
+               masterPack[(i * j) - 1] = new Card(Card.values[j - 1], Card.Suit.values()[i - 1]);
             }
          }
       }
