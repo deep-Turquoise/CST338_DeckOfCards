@@ -441,20 +441,22 @@ class Deck
       return topCard;
    }
 
+   /*
+    * This method takes the top card from the deck and "deals it" thus removing it from the deck.
+    */
    public Card dealCard() 
    {
-      Card newCard = new Card();
-      if(cards[topCardAccessor()] != null)
+      Card retCard;
+      if (topCard > 0)
       {
-         newCard.set(cards[topCard].getValue(), cards[topCard].getSuit());
-         cards[topCardAccessor()] = null; // remove card
+         retCard = cards[topCard - 1];
          topCard--;
-         return newCard;
       }
-      else 
-      { 
-         return null; 
+      else
+      {
+         retCard = new Card( 'z', Card.Suit.clubs);  // 'z' forces a card with errorFlag set.
       }
+      return retCard;
    }
 
    /*
