@@ -436,6 +436,7 @@ class Deck
       }
    }
 
+   
    public int topCardAccessor()
    {
       return topCard;
@@ -449,7 +450,7 @@ class Deck
       Card retCard;
       if (topCard > 0)
       {
-         retCard = cards[topCard - 1];
+         retCard = cards[topCard];
          topCard--;
       }
       else
