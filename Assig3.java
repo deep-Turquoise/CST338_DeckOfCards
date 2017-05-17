@@ -40,13 +40,14 @@ public class Assig3
          }
          for (int x = 0; x < players.length; ++x)
          {
-            Card dealCard = new Card();
+            Card dealCard;
             dealCard = newDeck.dealCard();
             System.out.println(dealCard.toString());
-            if (dealCard == null)
+            if (dealCard.getErrorFlag())
             {
                break;
-            } else
+            } 
+            else
             {
                players[x].takeCard(dealCard);
             }
@@ -393,7 +394,6 @@ class Deck
    Deck()
    {
       numPacks = 1;
-      topCard = 0;
       allocateMasterPack();
 
       cards = new Card[numPacks * DECK_SIZE];
@@ -482,7 +482,7 @@ class Deck
    public Card dealCard()
    {
       Card retCard;
-      if (topCard > 0)
+      if (topCard >= 0)
       {
          retCard = cards[topCard];
          topCard--;
@@ -525,7 +525,7 @@ class Deck
          masterPack = new Card[52];
          for (int i = 0; i < Card.Suit.values().length; i++)
          {
-            for (int j = 0; j <= Card.values.length; j++)
+            for (int j = 0; j < Card.values.length; j++)
             {
                masterPack[index] = new Card(Card.values[j], Card.Suit.values()[i]);
                index++;
