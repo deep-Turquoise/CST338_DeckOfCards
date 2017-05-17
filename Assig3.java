@@ -12,11 +12,11 @@ public class Assig3
    {
       System.out.println("----------------------------------------------------");
       System.out.println("Testing for Class Card...");
-      
+
       Card legalCard1 = new Card('2', Card.Suit.diamonds);
       Card legalCard2 = new Card('5', Card.Suit.hearts);
       Card illegalCard1 = new Card('Z', Card.Suit.hearts);
-      
+
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
@@ -30,18 +30,17 @@ public class Assig3
       System.out.println(legalCard1.toString());
       System.out.println(legalCard2.toString());
       System.out.println(illegalCard1.toString());
-      
+
       System.out.println("----------------------------------------------------");
       System.out.println("Testing for Class Deck...");
       Deck newDeck = new Deck(2);
-      int count = 0;
       while(true)
       {
-         System.out.print(count + ". ");
-         ++count;
          Card dealCard = new Card();
          dealCard = newDeck.dealCard();
-         if(dealCard == null) { break; }
+         if(dealCard == null) { 
+            break; 
+         }
          else{ System.out.println(dealCard.toString()); }
       }
    }
@@ -229,15 +228,15 @@ class Hand
    // Tests to see if card is legal or not
    public Card inspectCard(int k)
    {
-     if(numCards == 0 || k < 0 || k > numCards)
-     {
-        // Creates illegal card
-        return new Card('X', Card.Suit.spades);
-     }
-     else 
-     {
-        return myCards[k];
-     }
+      if(numCards == 0 || k < 0 || k > numCards)
+      {
+         // Creates illegal card
+         return new Card('X', Card.Suit.spades);
+      }
+      else 
+      {
+         return myCards[k];
+      }
    }
 }
 
@@ -248,7 +247,7 @@ class Deck
    private Card[] cards = new Card[MAX_CARDS];
    private int topCard;
    private int numPacks;
-   
+
    Deck()
    {
       allocateMasterPack();
@@ -263,13 +262,13 @@ class Deck
       allocateMasterPack();
       // to ensure we are not going over max
       if(numPacks > MAX_CARDS) { numPacks = MAX_CARDS; }
-      
+
       int count = numPacks;
       while(count > 0) 
       {
          for(int x = 0; x < masterPack.length; ++x)
          {
-               cards[((numPacks-count)*52)+x] = masterPack[x];
+            cards[((numPacks-count)*52)+x] = masterPack[x];
          }
          --count;
       }
@@ -288,7 +287,7 @@ class Deck
       {
          for(int x = 0; x < masterPack.length; ++x)
          {
-               cards[((numPacks-count)*52)+x] = masterPack[x];
+            cards[((numPacks-count)*52)+x] = masterPack[x];
          }
          --count;
       }
@@ -326,7 +325,6 @@ class Deck
    public Card dealCard() 
    {
       topCard = topCardAccessor();
-      System.out.print(topCard + " - ");
       Card newCard = new Card();
       if(cards[topCard] != null)
       {
